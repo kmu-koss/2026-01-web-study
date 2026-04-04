@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hobby-in 카테고리별 취미 입문 가이드를 찾아보세요.">
+  <title>카테고리 | Hobby-in</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar" id="main-nav"></header>
+
+  <main class="page-content">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" id="breadcrumb">
+        <a href="index.html">홈</a>
+        <span class="separator">›</span>
+        <span class="current" id="breadcrumb-current">카테고리</span>
+      </nav>
+
+      <!-- Page Title -->
+      <div class="section-header" style="margin-bottom:var(--space-lg)">
+        <h1 class="section-title fade-in" id="page-title">📂 전체 <span class="highlight">카테고리</span></h1>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container fade-in" style="margin-bottom:var(--space-xl);max-width:100%">
+        <div class="search-bar" id="cat-search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="cat-search-input" placeholder="가이드 검색..." autocomplete="off">
+          <button class="search-btn" onclick="CategoryPage.doSearch()">검색</button>
+        </div>
+      </div>
+
+      <!-- Category Tabs (when no filter) -->
+      <div id="category-tabs-area" class="fade-in"></div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar fade-in" id="filter-bar">
+        <span style="font-weight:600;font-size:0.85rem;color:var(--text-secondary)">필터:</span>
+        <select id="filter-sort" class="form-input" style="width:auto;padding:8px 36px 8px 12px" onchange="CategoryPage.applyFilters()">
+          <option value="popular">인기순</option>
+          <option value="recent">최신순</option>
+          <option value="name">이름순</option>
+        </select>
+        <div class="tags-wrap" id="filter-tags" style="flex:1"></div>
+      </div>
+
+      <!-- Guide Grid -->
+      <div class="grid grid-3" id="guide-list" style="margin-top:var(--space-lg)"></div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="empty-state" style="display:none">
+        <div class="empty-icon">🔍</div>
+        <p>조건에 맞는 가이드가 없습니다.</p>
+        <a href="category.html" class="btn btn-secondary">전체 보기</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">Hobby-in</div>
+      <p>초보자를 위한 취미 입문 가이드 플랫폼 ⓒ 2026</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/category.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hobby-in(하빈) - 새로운 취미를 시작하는 가장 쉬운 방법. 경험자들의 단계별 입문 가이드를 한곳에서 찾아보세요.">
+  <title>Hobby-in | 취미의 시작</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar" id="main-nav"></header>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container">
+
+      <!-- Hero Section -->
+      <section class="hero section" id="hero-section">
+        <div class="hero-badge fade-in">
+          <span>✨</span>
+          <span>고인물들이 알려주는 진짜 입문 가이드</span>
+        </div>
+        <h1 class="fade-in fade-in-delay-1">
+          새로운 취미,<br>
+          <span class="gradient-text" id="typing-target">여기서 시작하세요</span>
+          <span class="typing-cursor" id="typing-cursor"></span>
+        </h1>
+        <p class="fade-in fade-in-delay-2">
+          악기, 게임, 운동, 요리… 어디서부터 시작해야 할지 모르겠다면?<br>
+          경험자(고인물)들이 직접 쓴 <strong>단계별 입문 가이드</strong>를 만나보세요.
+        </p>
+        <div class="search-container fade-in fade-in-delay-3">
+          <div class="search-bar" id="hero-search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="hero-search-input" placeholder="배우고 싶은 취미를 검색하세요 (예: 기타, 헬스, 요리)" autocomplete="off">
+            <button class="search-btn" id="hero-search-btn" onclick="Home.handleSearch()">검색</button>
+          </div>
+          <div class="search-suggestions" id="hero-suggestions"></div>
+        </div>
+      </section>
+
+      <!-- Popular Tags -->
+      <section class="section fade-in" id="tags-section">
+        <div class="tags-wrap" id="popular-tags" style="justify-content:center"></div>
+      </section>
+
+      <!-- Popular Categories -->
+      <section class="section" id="categories-section">
+        <div class="section-header">
+          <h2 class="section-title">🔥 <span class="highlight">인기 카테고리</span></h2>
+          <a href="category.html" class="btn btn-ghost">전체 보기 →</a>
+        </div>
+        <div class="grid grid-3" id="category-grid"></div>
+      </section>
+
+      <!-- Best Guides -->
+      <section class="section" id="best-section">
+        <div class="section-header">
+          <h2 class="section-title">🏆 이번 주 <span class="highlight">베스트 가이드</span></h2>
+          <a href="category.html" class="btn btn-ghost">전체 보기 →</a>
+        </div>
+        <div class="grid grid-3" id="best-guides"></div>
+      </section>
+
+      <!-- Recent Guides -->
+      <section class="section" id="recent-section">
+        <div class="section-header">
+          <h2 class="section-title">🆕 <span class="highlight">최신 가이드</span></h2>
+        </div>
+        <div class="grid grid-3" id="recent-guides"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">Hobby-in</div>
+      <p>초보자를 위한 취미 입문 가이드 플랫폼 ⓒ 2026</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
