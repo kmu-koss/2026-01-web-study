@@ -4,118 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>하츄핑 도감</title>
+  <title>나의 첫 웹페이지</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="page-shell">
-    <header class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">HACHUPING ARCHIVE</p>
-        <h1>하츄핑 도감</h1>
-        <p class="hero-desc">
-          사랑의 로열 티니핑 하츄핑을 시즌별 이미지와 콘셉트로 정리한 팬 아카이브입니다.
-          하트, 보석, 꽃, 디저트, 스타, 프린세스 무드까지 한 화면에서 살펴보세요.
-        </p>
-        <div class="hero-actions">
-          <button id="randomButton" class="primary-button" type="button">랜덤 하츄핑 보기</button>
-          <a class="ghost-button" href="#archive">도감 펼치기</a>
-        </div>
-        <ul class="hero-meta">
-          <li>시즌 1~6 비주얼 수록</li>
-          <li>마법 도구와 테마 정리</li>
-          <li>카드를 누르면 상세 정보 갱신</li>
-        </ul>
-      </div>
-
-      <section class="hero-stage">
-        <div class="stage-card">
-          <p class="stage-label">대표 비주얼</p>
-          <img id="featuredImage" class="featured-image" alt="하츄핑 대표 이미지" referrerpolicy="no-referrer" />
-          <div class="stage-caption">
-            <strong id="featuredSeason">시즌 1</strong>
-            <span id="featuredMood">사랑의 로열 티니핑</span>
-          </div>
-        </div>
-      </section>
-    </header>
-
-    <main>
-      <section class="overview-grid">
-        <article class="overview-card">
-          <p class="card-kicker">대표 키워드</p>
-          <h2>사랑, 하트, 반짝이는 핑크</h2>
-          <p>
-            하츄핑은 작품 전반에서 로미와 가장 가까운 로열 티니핑으로, 시즌마다 소품과 디테일이
-            달라지지만 한눈에 알아볼 수 있는 핑크 하트 테마는 그대로 유지됩니다.
-          </p>
-        </article>
-
-        <article class="overview-card">
-          <p class="card-kicker">좋아하는 것</p>
-          <h2>생크림 딸기 케이크와 딸기</h2>
-          <p>
-            달콤한 디저트를 좋아하고, 신 맛이 나는 음식은 싫어합니다. 사랑스럽고 다정한 성격이
-            비주얼과 설정 모두에 반영되어 있습니다.
-          </p>
-        </article>
-
-        <article class="overview-card">
-          <p class="card-kicker">첫 등장</p>
-          <h2>엉망진창 쿠키 만들기</h2>
-          <p>
-            시즌 1부터 시즌 6까지 계속 모습을 바꾸며 등장하고, 각 시즌의 콘셉트에 맞는 전용
-            아이템을 들고 나타납니다.
-          </p>
-        </article>
-      </section>
-
-      <section id="archive" class="archive-section">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">SEASON SELECTOR</p>
-            <h2>시즌별 아카이브</h2>
-          </div>
-          <div id="filterBar" class="filter-bar" aria-label="시즌 필터"></div>
-        </div>
-
-        <section class="detail-panel">
-          <article class="detail-summary">
-            <p class="card-kicker">선택한 시즌</p>
-            <h3 id="detailTitle">시즌 1 하츄핑</h3>
-            <p id="detailDescription" class="detail-description"></p>
-            <dl class="detail-facts">
-              <div>
-                <dt>테마</dt>
-                <dd id="detailTheme"></dd>
-              </div>
-              <div>
-                <dt>마법 도구</dt>
-                <dd id="detailTool"></dd>
-              </div>
-              <div>
-                <dt>무드</dt>
-                <dd id="detailMood"></dd>
-              </div>
-              <div>
-                <dt>포인트</dt>
-                <dd id="detailPoint"></dd>
-              </div>
-            </dl>
-          </article>
-
-          <aside class="detail-quote">
-            <p class="card-kicker">하츄핑 메모</p>
-            <blockquote id="detailQuote"></blockquote>
-          </aside>
-        </section>
-
-        <section id="cardGrid" class="card-grid" aria-live="polite"></section>
-      </section>
-    </main>
-  </div>
-
+  <main class="card">
+    <p class="eyebrow">2026 KOSS WEB PROJECT STUDY</p>
+    <h1>안녕하세요, 저는 ___ 입니다</h1>
+    <p class="desc">제가 만들고 싶은 사이트는 ___ 입니다.</p>
+    <p class="desc">제가 사용할 AI 도구는 ___입니다.</p>
+    <p class="desc">제 깃허브 아이디는 ___입니다.</p>
+    <button id="cheerButton">___의 계획 제출하기</button>
+  </main>
   <script src="script.js"></script>
 </body>
 

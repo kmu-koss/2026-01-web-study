@@ -1,0 +1,25 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/week1/index.html"
+    },
+    {
+      "source": "/style.css",
+      "destination": "/week1/style.css"
+    },
+    {
+      "source": "/script.js",
+      "destination": "/week1/script.js"
+    },
+    {
+      "source": "/api/seasons/random",
+      "destination": "/api/season-random"
+    },
+    {
+      "source": "/api/seasons/:id",
+      "destination": "/api/season?id=:id"
+    }
+  ]
+}
