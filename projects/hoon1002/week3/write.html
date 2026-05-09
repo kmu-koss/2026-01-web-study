@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hobby-in에서 나만의 취미 입문 가이드를 작성하세요.">
+  <title>가이드 작성 | Hobby-in</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar" id="main-nav"></header>
+
+  <main class="page-content">
+    <div class="container" style="max-width:800px">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.html">홈</a>
+        <span class="separator">›</span>
+        <span class="current">가이드 작성</span>
+      </nav>
+
+      <div class="section-header" style="margin-bottom:var(--space-xl)">
+        <h1 class="section-title fade-in">✍️ <span class="highlight">가이드 작성</span></h1>
+      </div>
+
+      <p class="fade-in" style="color:var(--text-secondary);margin-bottom:var(--space-2xl)">
+        당신의 경험이 누군가의 첫걸음이 됩니다. 입문자를 위한 가이드를 작성해주세요!
+      </p>
+
+      <form id="write-form" onsubmit="WritePage.handleSubmit(event)">
+
+        <!-- Title -->
+        <div class="editor-section fade-in fade-in-delay-1">
+          <div class="section-label"><span class="emoji">📌</span> 기본 정보</div>
+          <div class="form-group">
+            <label for="write-title">가이드 제목 *</label>
+            <input type="text" class="form-input" id="write-title" placeholder="예: 통기타 입문 완벽 가이드: 첫 코드부터 노래 한 곡까지" required>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)">
+            <div class="form-group">
+              <label for="write-category">대분류 카테고리 *</label>
+              <select class="form-input" id="write-category" required onchange="WritePage.updateSubcategories()">
+                <option value="">선택하세요</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="write-subcategory">소분류 카테고리 *</label>
+              <select class="form-input" id="write-subcategory" required>
+                <option value="">대분류를 먼저 선택하세요</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="editor-section fade-in fade-in-delay-2">
+          <div class="section-label"><span class="emoji">🏷️</span> 태그 선택</div>
+          <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:var(--space-md)">해당하는 태그를 모두 선택해주세요.</p>
+          <div class="tags-wrap" id="write-tags"></div>
+        </div>
+
+        <!-- Preparation -->
+        <div class="editor-section fade-in fade-in-delay-3">
+          <div class="section-label"><span class="emoji">📦</span> 준비물</div>
+          <div class="form-group">
+            <label for="write-prep">입문자가 준비해야 할 것들을 줄바꿈으로 구분해 작성하세요.</label>
+            <textarea class="form-input" id="write-prep" placeholder="예:&#10;합판 통기타 (10~15만 원대 추천)&#10;기타 피크 (여러 두께 세트)&#10;카포&#10;기타 튜너 앱" rows="6" required></textarea>
+          </div>
+        </div>
+
+        <!-- First Day -->
+        <div class="editor-section fade-in fade-in-delay-4">
+          <div class="section-label"><span class="emoji">📅</span> 1일차 추천 연습</div>
+          <div class="form-group">
+            <label for="write-firstday">처음 해보는 사람이 첫날 따라 할 수 있는 단계를 작성하세요.</label>
+            <textarea class="form-input" id="write-firstday" placeholder="예:&#10;1. 기타 튜너 앱으로 6줄 조율하기&#10;2. 올바른 자세 잡기&#10;3. C 코드 잡아보기&#10;4. 천천히 스트로크 연습" rows="6" required></textarea>
+          </div>
+        </div>
+
+        <!-- Caution -->
+        <div class="editor-section fade-in">
+          <div class="section-label"><span class="emoji">⚠️</span> 주의점</div>
+          <div class="form-group">
+            <label for="write-caution">초보자가 흔히 하는 실수나 주의할 점을 알려주세요.</label>
+            <textarea class="form-input" id="write-caution" placeholder="예:&#10;처음에 손가락이 아프다고 반창고를 붙이지 마세요.&#10;기타 줄을 너무 세게 누르면 소리가 죽습니다." rows="5" required></textarea>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="editor-section fade-in">
+          <div class="section-label"><span class="emoji">📝</span> 상세 가이드 본문</div>
+          <div class="form-group">
+            <label for="write-body">자유롭게 입문 가이드를 작성하세요. 문단은 빈 줄(Enter 2번)로 구분됩니다.</label>
+            <textarea class="form-input" id="write-body" placeholder="입문자에게 전하고 싶은 이야기를 자유롭게 작성하세요.&#10;&#10;첫 문단에는 이 취미의 매력을...&#10;&#10;두 번째 문단에는 주차별 추천 계획을..." rows="12" required></textarea>
+          </div>
+        </div>
+
+        <!-- Preview & Submit -->
+        <div style="display:flex;gap:var(--space-md);justify-content:flex-end;margin-top:var(--space-xl)">
+          <button type="button" class="btn btn-secondary" onclick="WritePage.preview()" id="preview-btn">👁️ 미리보기</button>
+          <button type="submit" class="btn btn-primary" id="submit-btn">🚀 발행하기</button>
+        </div>
+
+      </form>
+
+      <!-- Preview Modal -->
+      <div class="modal-overlay" id="preview-modal">
+        <div class="modal" style="max-width:700px;text-align:left;max-height:80vh;overflow-y:auto">
+          <h2 style="margin-bottom:var(--space-lg)">👁️ 미리보기</h2>
+          <div id="preview-content"></div>
+          <button class="btn btn-secondary" style="width:100%;margin-top:var(--space-xl)" onclick="document.getElementById('preview-modal').classList.remove('active')">닫기</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">Hobby-in</div>
+      <p>초보자를 위한 취미 입문 가이드 플랫폼 ⓒ 2026</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/write.js"></script>
+</body>
+</html>
